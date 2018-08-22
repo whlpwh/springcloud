@@ -1,0 +1,16 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: producer
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    base-url: http://localhost:9411
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+
+

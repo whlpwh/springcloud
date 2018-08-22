@@ -1,0 +1,35 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/whlpwh/spring-config-repo.git
+          search-paths: config-repo
+#          search-paths: '{application}'
+          username: wh383595196@163.com
+          password: wh19910713
+  rabbitmq:
+    host: 67.218.139.41
+    port: 5672
+    username: scm
+    password: scm
+  bus:
+    trace:
+      enabled: true # 开启消息跟踪
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: config
+  client:
+    service-url:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+management:
+  security:
+    enabled: false #关闭安全验证
+

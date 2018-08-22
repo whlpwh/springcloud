@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 9200
+turbine:
+  app-config: consumer,producer
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/,http://peer3:8002/eureka/
+
+
+
